@@ -25,12 +25,12 @@ export const GreatElement = (
 	};
 };
 
-export const jsx = (type: ElementType, config: any, maybeKey: any) => {
+export const jsx = (type: ElementType, config: object, maybeKey: string) => {
 	let key: Key = maybeKey ? String(maybeKey) : null;
 	const props: Props = {};
 	let ref: Ref = null;
 
-	for (let [propKey, propValue] of Object.entries(config)) {
+	for (const [propKey, propValue] of Object.entries(config)) {
 		if (propValue) {
 			switch (propKey) {
 				case 'key':

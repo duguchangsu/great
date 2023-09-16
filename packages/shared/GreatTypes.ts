@@ -1,8 +1,8 @@
 export type Type = string;
 export type Key = string | null;
-export type Ref = any;
-export type Props = any;
-export type ElementType = any;
+export type Ref = object | null;
+export type Props = object;
+export type ElementType = string;
 
 export interface GreatElementType {
 	$$typeof: symbol | number;
