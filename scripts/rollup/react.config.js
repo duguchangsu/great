@@ -1,4 +1,4 @@
-import { getPackageJSON, resolvePkgPath, getBaseRollupPlugins } from './utils';
+import { getPackageJSON, resolvePkgPath, basePlugins } from './utils.js';
 import generatePackageJson from 'rollup-plugin-generate-package-json';
 
 const { name, module } = getPackageJSON('react');
@@ -17,7 +17,7 @@ export default [
 			format: 'umd'
 		},
 		plugins: [
-			...getBaseRollupPlugins(),
+			...basePlugins(),
 			generatePackageJson({
 				inputFolder: pkgPath,
 				outputFolder: pkgDistPath,
@@ -47,6 +47,6 @@ export default [
 				format: 'umd'
 			}
 		],
-		plugins: getBaseRollupPlugins()
+		plugins: basePlugins()
 	}
 ];

@@ -1,6 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import typescript from '@rollup/plugin-typescript';
+import commonjs from '@rollup/plugin-commonjs';
 
 const pkgPath = path.resolve(__dirname, '../../packages');
 const distPath = path.resolve(__dirname, '../../dist/node_modules');
@@ -19,4 +20,4 @@ export function getPackageJSON(pkgName) {
 	return JSON.parse(str);
 }
 
-export const basePlugins = [typescript()];
+export const basePlugins = () => [commonjs(), typescript()];
